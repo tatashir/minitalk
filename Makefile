@@ -6,7 +6,7 @@
 #    By: tatashir <tatashir@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/26 20:16:58 by tatashir          #+#    #+#              #
-#    Updated: 2023/04/03 14:07:14 by tatashir         ###   ########.fr        #
+#    Updated: 2023/04/03 20:56:51 by tatashir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,12 +27,12 @@ ${NAME}: ${NAME_SERVER} ${NAME_CLIENT}
 ${NAME_SERVER}: ${OBJS_SERVER}
 	${MAKE} -C libft
 	${MAKE} -C ft_printf
-	${CC} ${CFLAGS} 42libft/libft.a ft_printf/libftprintf.a ${SRCS_SERVER} -o ${NAME_SERVER}
+	${CC} ${CFLAGS} libft/libft.a ft_printf/libftprintf.a ${SRCS_SERVER} -o ${NAME_SERVER}
 
 ${NAME_CLIENT}: ${OBJS_CLIENT}
 	${MAKE} -C libft
 	${MAKE} -C ft_printf
-	${CC} ${CFLAGS} 42libft/libft.a ft_printf/libftprintf.a ${SRCS_CLIENT} -o ${NAME_CLIENT}
+	${CC} ${CFLAGS} libft/libft.a ft_printf/libftprintf.a ${SRCS_CLIENT} -o ${NAME_CLIENT}
 
 clean:
 	${RM} ${OBJS_CLIENT} ${OBJS_SERVER}
