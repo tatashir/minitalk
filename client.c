@@ -6,11 +6,11 @@
 /*   By: tatashir <tatashir@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:13:49 by tatashir          #+#    #+#             */
-/*   Updated: 2023/04/05 16:32:21 by tatashir         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:39:11 by tatashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mintalk.h"
+#include "minitalk.h"
 
 int id_check(char *argv)
 {
@@ -56,4 +56,32 @@ static void conversion_2bit(int n, char str[9])
         i++;
         j--;
     }
+}
+
+int main(int a_argc, char *a_argv[])
+{
+    int i;
+    int j;
+    char r_str[9];
+
+    if (arguments_check(a_argc, a_argv))
+        return (0);
+    i = 0;
+    r_str[8] = '\0';
+    while (a_argv[2][i] != '\0')
+    {
+        conversion_2bit((int)a_argv[2][i], r_str);
+        j = 0;
+        while (j < 8)
+        {
+            if (r_str[j] == '1')
+                kill((pid_t)ft_atoi(a_argv[1]), SIGUSR1);
+            else if (r_str == '0')
+                kill ((pid_t)ft_atoi(a_argv[1]), SIGUSR2);
+            j++;
+            usleep(450);
+        }
+        i++;
+    }
+    return (0);
 }

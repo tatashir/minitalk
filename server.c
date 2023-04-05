@@ -6,7 +6,7 @@
 /*   By: tatashir <tatashir@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 14:33:39 by tatashir          #+#    #+#             */
-/*   Updated: 2023/04/05 16:23:34 by tatashir         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:33:54 by tatashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int main(void)
 
     ft_bzero(&r_sa, sizeof(struct sigaction));
     r_sa.sa_handler = binary_converter;
-    sigemptyset(&r_sa.sa_mask, SIGUSR1);
+    sigemptyset(&r_sa.sa_mask);
     sigaddset(&r_sa.sa_mask, SIGUSR1);
     sigaddset(&r_sa.sa_mask, SIGUSR2);
     r_sa.sa_flags = 0;
