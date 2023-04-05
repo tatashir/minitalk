@@ -6,7 +6,7 @@
 /*   By: tatashir <tatashir@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:13:49 by tatashir          #+#    #+#             */
-/*   Updated: 2023/03/26 20:15:33 by tatashir         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:32:21 by tatashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,15 @@ static void conversion_2bit(int n, char str[9])
     int i;
     int j;
     int rbase;
+
+    i = 0;
+    j = 7;
+    while (0 <= j)
+    {
+        rbase = 1 << i;
+        rbase = n & rbase;
+        str[j] = (rbase >> i) + '0';
+        i++;
+        j--;
+    }
 }
