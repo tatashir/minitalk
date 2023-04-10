@@ -6,7 +6,7 @@
 /*   By: tatashir <tatashir@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:13:49 by tatashir          #+#    #+#             */
-/*   Updated: 2023/04/05 19:54:02 by tatashir         ###   ########.fr       */
+/*   Updated: 2023/04/10 13:40:18 by tatashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	main(int a_argc, char *a_argv[])
 			if (r_str[j] == '1')
 				kill((pid_t)ft_atoi(a_argv[1]), SIGUSR1);
 			else if (r_str[j] == '0')
-				kill ((pid_t)ft_atoi(a_argv[1]), SIGUSR2);
+				kill((pid_t)ft_atoi(a_argv[1]), SIGUSR2);
 			j++;
 			usleep(450);
 		}
