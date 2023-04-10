@@ -6,7 +6,7 @@
 /*   By: tatashir <tatashir@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 14:33:39 by tatashir          #+#    #+#             */
-/*   Updated: 2023/04/05 19:57:22 by tatashir         ###   ########.fr       */
+/*   Updated: 2023/04/10 14:00:32 by tatashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	conversion_10bit(int a_2)
 	return ((char)rtn);
 }
 
-void	binary_converter(int num)
+void	signal_handler(int num)
 {
 	static int	r_binary_n;
 	static int	count;
@@ -54,7 +54,7 @@ int	main(void)
 	struct sigaction	r_sa;
 
 	ft_bzero(&r_sa, sizeof(struct sigaction));
-	r_sa.sa_handler = binary_converter;
+	r_sa.sa_handler = signal_handler;
 	sigemptyset(&r_sa.sa_mask);
 	sigaddset(&r_sa.sa_mask, SIGUSR1);
 	sigaddset(&r_sa.sa_mask, SIGUSR2);
